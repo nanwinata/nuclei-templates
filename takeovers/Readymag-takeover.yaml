@@ -1,0 +1,20 @@
+id: Readymag-takeover
+
+info:
+  name: Readymag Takeover Detection
+  author: nanwn
+  severity: High
+  tags: takeover
+  reference: https://nanwinata.com/readymag-subdomain-takeover.html
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        name: Readymag
+        words:
+          - Website is almost here
+          - To complete the setup, please hit the “Map Now” button in your projects’s settings.
